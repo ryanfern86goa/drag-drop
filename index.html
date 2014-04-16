@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+  <title>Bookstrap</title>
+  <link rel="stylesheet" href="css/bookstrap-app.css" />
+  <link rel="stylesheet" href="css/bookstrap-content.css" />
+  <link rel="stylesheet" href="css/Bookstrap.Replicas.css" />
+  <link rel="stylesheet" href="css/shared.css" />
+  <link href="css/keyboard.css" rel="stylesheet" />
+  <style type="text/css">
+
+  </style>
+</head>
+<body id="main_keyboard">
+  <div id="wrapper_navigation">
+      <div id="displayKeyboard" class="keyboardShowHideBtn"><img src="content-images/pencil.png"/> </div>  
+  </div>
+  <div class="book-drawer" 
+          data-book-drawer-state="closed"
+          data-book-drawer-position="bottom"
+          data-book-drawer-anchor-width="20"
+          data-book-drawer-blur-closes="true"
+          data-book-drawer-trigger="tap">
+    <a href="#" class="book-drawer-handle"></a>
+    <div class="book-drawer-content">
+      <h1 class="book-title"></h1>
+      <section>
+        <nav epub:type="page-list">
+         <ol>
+         </ol>
+        </nav>
+      </section>
+    </div>
+  </div>
+
+  <div id="bookstrap-viewport-container">
+    <div id="bookstrap-viewport">
+      <div id="col1" class="column"></div>
+      <div id="col2" class="column"></div>
+      <div id="col3" class="column"></div>
+    </div>
+  </div>
+
+  <script src="js/zepto.js"></script>
+  <plugins>
+    <plugin name="Bookstrap.Navigation.Manager" />
+    <plugin name="Bookstrap.DrawerManager" />
+    <plugin name="Bookstrap.RememberLastPage" />
+    <plugin name="Bookstrap.Replicas" />
+    <plugin name="Bookstrap.Drawer.Thumbs" />
+    <plugin name="Padify.Reader"></plugin>
+  </plugins>
+  <script data-main="js/main" src="js/require.js"></script>
+  <script type="text/javascript" src="js/bookstrap.js"></script>
+  <script src="js/jquery.js"></script> 
+  <script type="text/javascript">
+         jQuery.noConflict();
+  </script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<script src="js/drag-drop-clone.js"></script> 
+    <script>
+  $(document).on('bookstrapready', function(){
+    var dragDrop
+//bookstrap.disablePageSwipe
+  bookstrap.on('pageload',function(domPage){
+            
+            if(domPage!==undefined){
+
+            $(".keyboardShowHideBtn").removeAttr("id").attr("id","displayKeyboard");
+   
+
+            var pageHref      = domPage.pageLoaded.href;
+            var currentPageId = "#"+domPage.el.id;
+
+
+            $(currentPageId).find(".draggable_boundary").attr("id","wrapper_droppable");
+            $(currentPageId).find(".droppable_container").attr("id","droppable_content");
+
+
+            if(typeof(Storage)!=="undefined"){
+
+              if(localStorage[pageHref]){
+                        console.log("geting saved top = "+localStorage[pageHref]);
+            }
+  
+             }else{
+                   console.log("your browser doesnt support localStorage");
+             }
+
+     
+     dragDrop = new dragDropClone();
+
+     dragDrop.init({
+     draggable:".draggable",
+     droppable:"#droppable_content",
+     constraintBoundary:"#wrapper_droppable",
+     addClassToCloneObject:"cloneDraggable",
+     deleteOnObject:"#main_keyboard",
+     debugMode:false,
+     clear:"#clear",
+     save:"#save",
+     keyboardShowButton:"#displayKeyboard",
+     keyboardContainer:"#wrapper_keyboard",
+     pageRef:pageHref,
+     domPage:domPage,
+     currentPage:currentPageId
+     });
+
+     dragDrop.doMagic();
+
+     dragDrop.restoreState();
+
+   }
+         
+          });
+
+     bookstrap.on('pageunload',function(domPage){
+     
+    
+    if(domPage!==undefined){
+         
+         dragDrop.hideKeyboard(); 
+         dragDrop.unbindEvents();
+
+     var unloadingPageId = "#"+domPage.el.id; 
+    
+     if($(".cloneDraggable").length>0){
+          dragDrop.save();
+          dragDrop.clearNotes();
+
+        }
+    
+     $(unloadingPageId).find(".draggable_boundary").removeAttr("id").removeAttr("class").addClass("draggable_boundary");
+     $(unloadingPageId).find(".droppable_container").removeAttr("id").removeAttr("class").addClass("droppable_container");
+
+     
+     }
+
+     })
+
+  });
+  </script>
+    
+    <div id="wrapper_keyboard">
+     <div id="row-1">
+      <div class="draggable"><!--d --> <img src="img/new-icons/1.png" alt="1"/> </div>
+      <div class="draggable"><!--e --> <img src="img/new-icons/2.png" alt="2"/></div>
+      <div class="draggable"><!--f--> <img src="img/new-icons/3.png" alt="3"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/4.png" alt="4"/></div>
+      <div class="draggable"><!--h --> <img src="img/new-icons/5.png" alt="4"/></div>
+      <div class="draggable"><!--i --> <img src="img/new-icons/6.png" alt="4"/> </div>
+      <div class="draggable"><!--j --> <img src="img/new-icons/7.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/8.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/9.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/10.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/11.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/12.png" alt="4"/></div>
+    </div>
+    <div id="row-2">
+      <div class="draggable"><!--g --> <img src="img/new-icons/13.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/14.png" alt="4"/></div>  
+      <div class="draggable"><!--g --> <img src="img/new-icons/15.png" alt="4"/></div> 
+      <div class="draggable"><!--g --> <img src="img/new-icons/16.png" alt="4"/></div> 
+      <div class="draggable"><!--g --> <img src="img/new-icons/17.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/18.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/19.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/20.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/21.png" alt="4"/></div>
+      <div class="draggable"><!--g --> <img src="img/new-icons/22.png" alt="4"/></div>
+      <div id="clear">clear </div> 
+    </div>
+
+    </div>
+
+
+</body>
+</html>

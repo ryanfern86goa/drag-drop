@@ -1,0 +1,1182 @@
+/* bookstrap - v1.3.29 - 2013-12-18 */
+/* ************************
+          Icon font
+************************** */
+@font-face {
+  font-family: 'book-icons';
+  src: url('../fonts/book-icons.eot');
+  src: url('../fonts/book-icons.eot?#iefix') format('embedded-opentype'), url('../fonts/book-icons.woff') format('woff'), url('../fonts/book-icons.ttf') format('truetype'), url('../fonts/book-icons.svg#book-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ************************
+          Reset
+************************** */
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  -webkit-hyphens: none;
+}
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 9px 25px;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+article,
+section,
+header,
+hgroup,
+aside,
+footer,
+figure,
+.book-article,
+.book-section,
+.book-row,
+.book-frame {
+  border: 0;
+  position: relative;
+  /* Reset positioning */
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.book-frame {
+  max-width: 100%;
+}
+nav li,
+.book-nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+blockquote {
+  border: 0;
+  line-height: inherit;
+}
+header,
+footer {
+  max-width: 100%;
+  padding: 15px 30px;
+}
+p,
+li {
+  margin: 0;
+  padding: 0;
+  min-height: 1.1em;
+  min-width: 5px;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+.book-noindent {
+  text-indent: 0 ! important;
+}
+.book-indent {
+  text-indent: 18px ! important;
+  /* kind of arbitrary */
+
+}
+/* ************************
+      Pages
+************************** */
+body {
+  position: relative;
+}
+article,
+.book-page,
+.book-article {
+  min-height: 100%;
+  /*  font-size: 1.4em; 
+  font-family: Georgia, serif;*/
+
+  padding: 0;
+  z-index: 0;
+  background-color: white;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.book-page {
+  padding: 15px;
+}
+/* ************************
+      Text columns
+************************** */
+.book-text-columns-2 {
+  -webkit-column-count: 2;
+  -webkit-column-gap: 40px;
+}
+.book-text-columns-3 {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 40px;
+}
+/* ************************
+          Generic rules
+************************** */
+.book-disable-transitions * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+/* ************************
+          Generic rules
+************************** */
+.book-align-left {
+  text-align: left;
+}
+.book-align-center {
+  text-align: center;
+}
+.book-align-right {
+  text-align: right;
+}
+.book-align-justify {
+  text-align: justify;
+}
+.book-align-hanging {
+  /* TODO */
+
+}
+.book-caps-all {
+  text-transform: uppercase;
+}
+.book-caps-small {
+  font-variant: small-caps;
+}
+.book-dropcap:first-letter {
+  float: left;
+  font-size: 310%;
+  line-height: 1.1;
+  margin-right: .1em;
+  margin-bottom: -0.25em;
+}
+.book-dropcap {
+  text-indent: 0 ! important;
+}
+.book-white,
+.book-white p {
+  color: white ! important;
+}
+/* ************************
+          Figures
+************************** */
+figure,
+.book-figure {
+  display: inline-block;
+  max-width: 100%;
+  page-break-inside: avoid;
+  margin: 20px 0;
+}
+figure:first-child,
+.book-figure:first-child {
+  margin-top: 0;
+}
+figure img,
+.book-figure img {
+  max-width: 100%;
+  /* this will be removed if user manually resizes */
+
+  border-radius: inherit;
+}
+figure > a {
+  display: block;
+}
+figure.book-revealcaption figcaption {
+  opacity: 1;
+  transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+figure.book-revealcaption figcaption.book-hide-caption {
+  opacity: 0;
+}
+.book-image-crop img {
+  max-width: none;
+}
+.book-fullbleed {
+  display: block;
+  max-width: none;
+  margin: 0;
+}
+section .book-fullbleed {
+  margin-left: -15px;
+  /* ie. match the section margins */
+
+  margin-right: -15px;
+}
+.book-row .book-fullbleed {
+  margin-left: -30px;
+  /* ie. match the page margins */
+
+  margin-right: -30px;
+}
+.book-row .book-fullbleed:first-child {
+  margin-top: -30px;
+}
+.book-float-left {
+  float: left;
+  margin-top: 0;
+  margin-right: 20px;
+}
+.book-float-right {
+  float: right;
+  margin-top: 0;
+  margin-left: 20px;
+}
+.book-float-center {
+  clear: both;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.book-caption-inside figcaption {
+  position: absolute;
+  margin: 10px;
+  top: 10px;
+  left: 10px;
+}
+.book-caption-none figcaption,
+.book-caption-none .book-frame {
+  display: none;
+}
+.book-caption-outside figcaption,
+.book-caption-outside .book-frame {
+  display: block;
+  clear: left;
+  margin-top: 10px;
+}
+figure .book-frame figcaption {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+.book-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+/*
+An absolutely positioned BG image does not inherit the padding from the .book-col, so
+only add a margin to compensate for the book-page padding.
+*/
+.book-fullbleed.book-background-image:first-child {
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.book-fit-to-screen {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center;
+  width: 100%;
+}
+.book-fit-to-screen img {
+  max-height: 100%;
+}
+@media (max-width: 768px) {
+  figcaption > * {
+    zoom: 0.75;
+  }
+}
+@media (max-width: 480px) {
+  figcaption {
+    position: static !important;
+    width: auto !important;
+  }
+}
+.book-frame figure,
+.book-frame .book-figure {
+  margin: 0;
+}
+.book-hotspot {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+}
+/* ******************************
+  Fluid grids 
+********************************* */
+section,
+.book-section {
+  padding: 0 15px;
+}
+section,
+.book-section,
+.book-grid {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+section:first-child {
+  padding-top: 15px;
+}
+section:last-child {
+  padding-bottom: 15px;
+}
+.book-col {
+  padding: 0 15px;
+  box-sizing: border-box;
+  display: table-cell;
+  table-layout: fixed;
+  vertical-align: top;
+}
+/* backwards compatability */
+.book-row {
+  padding: 0;
+}
+.book-row .book-col {
+  padding: 15px;
+}
+.book-span12 {
+  width: 100%;
+}
+.book-span11 {
+  width: 91.6665%;
+}
+.book-span10 {
+  width: 83.33332%;
+}
+.book-span9 {
+  width: 75%;
+}
+.book-span8 {
+  width: 66.66667%;
+}
+.book-span7 {
+  width: 58.33332%;
+}
+.book-span6 {
+  width: 50%;
+}
+.book-span5 {
+  width: 41.66667%;
+}
+.book-span4 {
+  width: 33.33332%;
+}
+.book-span3 {
+  width: 25%;
+}
+.book-span2 {
+  width: 16.66667%;
+}
+.book-span1 {
+  width: 8.33332%;
+}
+/* Collapse to single column on smaller screens */
+@media (max-width: 480px) {
+  section {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    width: 100%;
+    table-layout: auto;
+  }
+  .book-col {
+    width: 100%;
+    display: block;
+    -webkit-flex: 1;
+    flex: 1;
+    table-layout: auto;
+    /* Omit grid column gutters */
+  
+    padding: 0;
+  }
+  /* Collapse empty paragraphs */
+  p:empty + p:empty {
+    display: none;
+  }
+}
+/* ***************************************
+  Interactivity
+****************************************** */
+/* Overlays */
+.book-overlay,
+.book-popover {
+  position: absolute;
+  z-index: 9999;
+  background: white;
+  top: 20px;
+  left: 20px;
+  min-width: 50px;
+  min-height: 40px;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: none;
+  visibility: hidden;
+  width: 259px;
+  height: 333px;
+}
+.book-overlay.book-frame,
+.book-popover.book-frame {
+  display: none;
+}
+.book-overlay.book-visible,
+.book-popover.book-visible {
+  visibility: visible;
+}
+.book-overlay .popover-close,
+.book-popover .popover-close,
+.book-overlay .book-popover-close,
+.book-popover .book-popover-close {
+  font-family: Helvetica, sans-serif;
+  font-size: 1em;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 5px 0;
+  box-sizing: border-box;
+  vertical-align: top;
+  line-height: 1em;
+}
+.book-popover-content {
+  padding: 10px;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+/* ************************
+    Default table styling
+************************** */
+table {
+  border-collapse: collapse;
+  padding: 0;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 2px 3px;
+  vertical-align: top;
+  text-align: left;
+}
+/* default zebra striping - will typically be overridden */
+.book-zebra-stripes tr:nth-child(2n) {
+  background-color: #eee;
+}
+/* Book popovers */
+.book-overlay-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+/* ************************
+    Placement
+************************** */
+.book-inline {
+  display: inline-block;
+}
+.book-floating {
+  position: absolute;
+}
+.book-fixed {
+  position: fixed;
+}
+header.book-fixed,
+footer.book-fixed {
+  z-index: 9;
+  width: 100%;
+}
+header.book-fixed {
+  top: 0;
+}
+footer.book-fixed {
+  bottom: 0;
+}
+/* ************************
+    Vertical alignment
+************************** */
+.book-valign-top,
+.book-valign-top .book-col {
+  vertical-align: top;
+}
+.book-valign-middle,
+.book-valign-middle .book-col {
+  vertical-align: middle;
+}
+.book-valign-bottom,
+.book-valign-bottom .book-col {
+  vertical-align: bottom;
+}
+/* ************************
+    Text effects
+************************** */
+.book-cutout {
+  color: transparent;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+.book-blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  filter: blur(3px);
+}
+/* ***************************
+    Image Zoom
+***************************** */
+.book-image-zoom-mask img {
+  position: absolute;
+  z-index: 100;
+}
+#bookstrap-viewport img.book-image-zoomed {
+  opacity: .2;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+/* ***************************
+    Buttons
+***************************** */
+.book-button {
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: black;
+  font-family: "book-icons";
+  -webkit-font-smoothing: antialiased;
+  text-indent: -999px;
+  overflow: hidden;
+  /* override any styles possibly set on <a> tags in general */
+
+  text-transform: none;
+  text-decoration: none;
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  line-height: 1;
+}
+figure .book-button {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+.book-round {
+  border-radius: 50%;
+}
+.book-square {
+  border-radius: 0;
+}
+.book-roundrect {
+  border-radius: 6px;
+}
+/* Button icons */
+.book-button:after {
+  font-family: "book-icons";
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: 0;
+}
+.book-button-plus:after {
+  content: "+";
+}
+.book-button-times:after {
+  content: "x";
+}
+.book-button-minus:after {
+  content: "-";
+}
+.book-button-doubleleft:after {
+  content: "\f100";
+}
+.book-button-doubleright:after {
+  content: "\f101";
+}
+.book-button-doubleup:after {
+  content: "\f102";
+}
+.book-button-doubledown:after {
+  content: "\f103";
+}
+.book-button-action:after {
+  content: "\e015";
+}
+.book-button-left:after {
+  content: "\e000";
+}
+.book-button-down:after {
+  content: "\e001";
+}
+.book-button-up:after {
+  content: "\e002";
+}
+.book-button-right:after {
+  content: "\e003";
+}
+.book-button-leftarrowhead:after {
+  content: "\e004";
+}
+.book-button-downarrowhead:after {
+  content: "\e005";
+}
+.book-button-uparrowhead:after {
+  content: "\e006";
+}
+.book-button-rightarrowhead:after {
+  content: "\e007";
+}
+.book-button-bigleftarrow:after {
+  content: "\e008";
+}
+.book-button-bigdownarrow:after {
+  content: "\e009";
+}
+.book-button-biguparrow:after {
+  content: "\e00a";
+}
+.book-button-bigrightarrow:after {
+  content: "\e00b";
+}
+.book-button-jumpright:after {
+  content: "\e013";
+}
+.book-button-jumpleft:after {
+  content: "\e014";
+}
+.book-button-heart:after {
+  content: "\e016";
+}
+.book-button-star:after {
+  content: "\e017";
+}
+.book-button-info:after {
+  content: "\e018";
+}
+.book-button-question:after {
+  content: "\e019";
+}
+.book-button-leftarrow:after {
+  content: "\e01a";
+}
+.book-button-downarrow:after {
+  content: "\e01b";
+}
+.book-button-uparrow:after {
+  content: "\e01c";
+}
+.book-button-rightarrow:after {
+  content: "\e01d";
+}
+.book-button-bubble:after {
+  content: "\e01e";
+}
+.book-button-search:after {
+  content: "\e01f";
+}
+.book-button-zoom:after {
+  content: "\f00e";
+}
+.book-button-fastforward:after {
+  content: "\e00c";
+}
+.book-button-fastrewind:after {
+  content: "\e00d";
+}
+.book-button-home:after {
+  content: "!";
+}
+.book-button-house:after {
+  content: "&";
+}
+.book-button-lifebelt:after {
+  content: "%";
+}
+.book-button-trolley1:after {
+  content: '"';
+}
+.book-button-trolley2:after {
+  content: "$";
+}
+.book-button-grid:after {
+  content: "\e00f";
+}
+.book-button-hamburger:after {
+  content: "\e010";
+}
+.book-button-dots:after {
+  content: "'";
+}
+.book-button-mail:after {
+  content: "(";
+}
+.book-button-link:after {
+  content: ")";
+}
+.book-button-cog:after {
+  content: "#";
+}
+/* ***************************************
+  Simple animations - webkit-specific ftm
+****************************************** */
+/* 
+Fix animation flicker issue
+See: http://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform;
+*/
+.book-frame,
+.book-fullbleed {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-backface-visibility: hidden;
+}
+@-webkit-keyframes book-dropin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@-webkit-keyframes book-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 
+Hack to remove scrollbars on iPad.
+We need to test this works in all environments and all devices before
+always using overflow: hidden
+ */
+@media (orientation: landscape) and (width: 1024px) {
+  .book-page {
+    overflow: hidden;
+  }
+}
+@media (orientation: portrait) and (width: 768px) {
+  .book-page {
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes book-slideleft {
+  0% {
+    -webkit-transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-webkit-keyframes book-slideright {
+  0% {
+    -webkit-transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-webkit-keyframes book-pop {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+/*
+@-webkit-keyframes book-colorfade {
+  0% { 
+    -webkit-filter: ~"saturate(0%)";
+  }
+  100% { 
+    -webkit-filter: ~"saturate(100%)";
+  }
+}
+*/.book-layers {
+  position: relative;
+}
+.book-layers .book-layer {
+  opacity: 0;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.book-layers .book-layer.book-layer-active {
+  opacity: 1.0;
+  position: relative;
+  z-index: 2;
+}
+.book-nav {
+  position: relative;
+  z-index: 9;
+}
+.book-nav ul {
+  list-style: none;
+}
+.book-nav li {
+  list-style: none;
+  display: inline-block;
+}
+.book-nav-none {
+  display: none;
+}
+.book-nav-dots,
+.book-nav-numbers {
+  width: 100%;
+  text-align: center;
+  clear: both;
+  margin: 10px 0;
+}
+.book-nav-dots a {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #999;
+  overflow: hidden;
+  text-indent: -100px;
+  margin: 0 10px;
+}
+.book-nav-numbers a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 1em;
+  width: 1.3em;
+  background-color: #333;
+  color: white;
+  border: none;
+  text-indent: none;
+}
+.book-nav .book-active a {
+  background-color: #09c;
+}
+.book-nav-thumbnails img {
+  display: inline-block;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 10px;
+}
+.book-overlay-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+}
+/* ************************
+    Flipcard
+************************** */
+.book-flipcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 600px;
+  -moz-perspective: 600px;
+  -webkit-perspective: 600px;
+}
+.book-flipcard .book-flipcard-front,
+.book-flipcard .book-flipcard-back {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: #fff;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.book-flipcard .book-flipcard-front figure > img,
+.book-flipcard .book-flipcard-back figure > img {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.book-flipcard .book-flipcard-front {
+  z-index: 900;
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+}
+.book-flipcard.book-flipped .book-flipcard-front {
+  z-index: 900;
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+.book-flipcard .book-flipcard-back {
+  z-index: 800;
+  -moz-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+}
+.book-flipcard.book-flipped .book-flipcard-back {
+  z-index: 1000;
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+}
+.book-row-below-fold-hidden {
+  display: none !important;
+}
+.bookstrap-webview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: 999;
+}
+.bookstrap-webview button {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  border: 1px solid #aaa;
+  background: white;
+}
+.bookstrap-webview button:after {
+  content: 'x';
+  color: #333;
+}
+.bookstrap-webview iframe {
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+}
+/*////////////////////////////////*/
+/* Quiz */
+/* Note: Make sure the parent
+/* has a set height               */
+/*////////////////////////////////*/
+.quiz-content {
+  height: 100%;
+}
+.book-quiz {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 90%;
+  min-width: 400px;
+  min-height: 400px;
+  text-align: center;
+  list-style-type: none;
+}
+.book-quiz header {
+  font-size: 1.5em;
+}
+.book-quiz h1 {
+  display: inline-block;
+  margin: 100px 0 0 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.book-quiz header .book-quiz-intro-imgbtn {
+  margin-top: -200px;
+}
+.book-quiz header a.next {
+  padding: 5px;
+  float: none;
+  border-radius: 0;
+  height: inherit;
+  width: 30%;
+  margin: 0 auto;
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: normal;
+  border: 5px solid #eee;
+  background: #00cc33;
+}
+.book-quiz-questions {
+  margin: 0;
+}
+.book-quiz-question {
+  list-style-type: none;
+  display: none;
+}
+.book-quiz-question ol {
+  display: block;
+  padding: 0;
+  margin: 25px auto;
+  width: 50%;
+  list-style-type: none;
+}
+.book-quiz-question ol li {
+  padding: 5px 10px;
+  margin: 5px auto;
+  clear: right;
+  display: block;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 1.6em;
+  border: 5px solid #c4c4c4;
+  border-radius: 10px;
+  background: rgba(55, 55, 55, 0.05);
+}
+.book-quiz li.book-quiz-question-correct.show-icon-correct:after {
+  content: "\00a0";
+  float: right;
+  width: 50px;
+  height: 50px;
+  background: url('../img/quiz-tick.png') no-repeat center;
+  background-size: 65%;
+  z-index: 5;
+  position: relative;
+  margin: -10px 0;
+}
+.book-quiz li.book-quiz-question-correct.show-icon-correct:before {
+  content: "\00a0";
+  float: left;
+  width: 50px;
+  height: 50px;
+  z-index: 5;
+  position: relative;
+}
+.book-quiz li.show-icon-incorrect:after {
+  content: "\00a0";
+  float: right;
+  width: 50px;
+  height: 50px;
+  background: url('../img/quiz-cross.png') no-repeat center;
+  background-size: 65%;
+  z-index: 5;
+  position: relative;
+  margin: -10px 0;
+}
+.book-quiz li.show-icon-incorrect:before {
+  content: "\00a0";
+  float: left;
+  width: 50px;
+  height: 50px;
+  z-index: 5;
+  position: relative;
+}
+.book-quiz a.next {
+  display: block;
+  float: right;
+  margin: 10px 0;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: url('../img/quiz-arrow.png') 100% no-repeat #00cc33;
+  background-size: 100%;
+  color: #FFF;
+  border: none;
+  margin-top: 20px;
+}
+.book-quiz-result {
+  display: none;
+}
+.book-quiz-question-counter {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+}
+.book-quiz-question-counter li {
+  list-style-type: none;
+  font-size: 19px;
+  text-align: center;
+  float: left;
+  margin: 10px 5px 0 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 204, 51, 0.27);
+  color: #FFF;
+  line-height: 31px;
+}
+.book-quiz-question-counter li.active-question-number {
+  background: #00cc33;
+}
