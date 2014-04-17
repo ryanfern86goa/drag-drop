@@ -32,6 +32,14 @@
       currentPageId       = obj.currentPage;
       domPage             = obj.domPage;
 
+ $(keyboardContainer).on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', 
+  function() {
+            if(!$(keyboardContainer).hasClass("wrapper_keyboard_hide")){
+               $(keyboardContainer).addClass("hide"); 
+              //$(keyboardContainer).css("height","0px");
+              }
+           
+   });
 
       if (debugMode) {
         console.log("initialise");
@@ -196,10 +204,11 @@
             containment: deleteOnObject,
             cursor: 'move',
             start: function(event){
-              event.stopPropagation();
-            },
+                    bookstrap.disablePageSwipe = true;
+                  },
             stop: function(event, ui) {
-            }
+                    bookstrap.disablePageSwipe = false;
+                  }
 
           }));
 
@@ -315,7 +324,7 @@
      $(keyboardShowButton).removeAttr("id").attr("id", "hideKeyboard");
       $("body").on("touchstart", "#hideKeyboard",hideKeyboard);
       $(keyboardContainer).addClass("wrapper_keyboard_hide");
-
+      $(keyboardContainer).removeClass( "hide" );
       }
 
       function restoreState() {
